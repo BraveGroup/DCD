@@ -21,7 +21,7 @@ python setup.py develop
 ```
 
 ## Directory Structure
-We need [KITTI dataset](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) and [keypoints annotation](). 
+We need [KITTI dataset](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) and keypoints annotation (in DGDE/kpts_ann/). 
 
 After download them, please organize as:
 
