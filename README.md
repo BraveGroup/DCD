@@ -47,7 +47,7 @@ After download them, please organize as:
 The whole pipeline including 3 parts: a) training DGDE first. b) using DGDE to generate needed data for GMW. c) training GMW and evaluate.
 
 a) training DGDE
-Training with 2 GPU. 
+Training with 2 GPUs. 
 
 ```bash
 cd DGDE
@@ -57,12 +57,12 @@ python tools/plain_train_net.py --batch_size 8 --config runs/DGDE.yaml \
 ```
 
 b) using DGDE to generate needed data for GMW.
-Finishing training for DGDE, please generate data in 1 gpu card as:
+Finishing training for DGDE, please generate data on 1 gpu card as:
 ```bash
 cd DGDE
 CUDA_VISIBLE_DEVICES=0 \
 python tools/plain_train_net.py --batch_size 8 --config runs/DGDE.yaml \
---output output/DGDE --num_gpus 21 \
+--output output/DGDE --num_gpus 1 \
 --generate_for_GMW \
 --ckpt output/DGDE/model_final.pth
 ```
