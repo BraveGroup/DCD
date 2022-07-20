@@ -6,3 +6,4 @@ logs/
 .vscode/
 DGDE/dataset
 gen_data/
+log.txt
