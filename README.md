@@ -88,7 +88,7 @@ main.py --log-dir ./logs/GMW/eval \
 --resume ./logs/GMW/checkpoint_epoch_100.pth.tar
 ```
 
-You can alse use the pre-trained weights of [DGDE,WGM]().
+You can also use the pre-trained weights of [DGDE,WGM]().
 
 ## Acknowlegment
 
