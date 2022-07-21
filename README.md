@@ -87,8 +87,8 @@ main.py --log-dir ./logs/GMW/eval \
 
 You can alse use the pre-trained data of [DGDE,gen data,WGM]().
 
-**Note:** There is an obvious variation of the performance for different runs as our baseline [MonoFlex]() says. Different training runs may get different results.
+**Note:** There is an obvious variation of the performance for different runs as our baseline [MonoFlex](https://github.com/zhangyp15/MonoFlex) says. Different training runs may get different results.
 
 ## Acknowlegment
 
-The code is maily base on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [DBPnP](https://github.com/Liumouliu/Deep_blind_PnP). Thanks for their gread work.
+The code is maily based on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [DBPnP](https://github.com/Liumouliu/Deep_blind_PnP). Thanks for their great work.
