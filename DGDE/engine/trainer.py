@@ -80,14 +80,17 @@ def do_train(
     max_iter = cfg.SOLVER.MAX_ITERATION
     start_iter = arguments["iteration"]
 
+    is_gen=cfg.TEST.GENERATE_GMW
     # enable warmup
     if cfg.SOLVER.LR_WARMUP:
         assert warmup_scheduler is not None
         warmup_iters = cfg.SOLVER.WARMUP_STEPS
     else:
         warmup_iters = -1
-
     model.train()
+    if is_gen:
+        freeze_bn(model)
+
     start_training_time = time.time()
     end = time.time()
 
@@ -102,7 +105,6 @@ def do_train(
         eval_iteration = 0
         record_metrics = ['Car_bev_', 'Car_3d_']
     
-    is_gen=cfg.TEST.GENERATE_GMW
     if is_gen:
         logger.info('Start collecting the data for GMW')
         max_iter=start_iter+len(data_loader.dataset) // cfg.SOLVER.IMS_PER_BATCH
@@ -122,7 +124,6 @@ def do_train(
         else:
             loss_dict, log_loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
-        
         # reduce losses over all GPUs for logging purposes
         log_losses_reduced = sum(loss for key, loss in log_loss_dict.items() if key.find('loss') >= 0)
         meters.update(loss=log_losses_reduced, **log_loss_dict)
@@ -134,18 +135,18 @@ def do_train(
             else:
                 losses.backward()
         
-        if grad_norm_clip > 0: clip_grad_norm_(model.parameters(), grad_norm_clip)
-        
-        if cfg.MODEL.FP16:
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            optimizer.step()
+            if grad_norm_clip > 0: clip_grad_norm_(model.parameters(), grad_norm_clip)
+            
+            if cfg.MODEL.FP16:
+                scaler.step(optimizer)
+                scaler.update()
+            else:
+                optimizer.step()
 
-        if iteration < warmup_iters:
-            warmup_scheduler.step(iteration)
-        else:
-            scheduler.step(iteration)
+            if iteration < warmup_iters:
+                warmup_scheduler.step(iteration)
+            else:
+                scheduler.step(iteration)
 
         batch_time = time.time() - end
         end = time.time()
@@ -208,7 +209,8 @@ def do_train(
         json.dump(loss_func.gen_data,open(os.path.join(out_dir,'gen_data_train.json'),'w'),indent=4)
    
         # generate infer data
-        logger.info('Start generate Infer data for GMW')          
+        logger.info('Start generate Infer data for GMW')   
+        # iteration=0       
         result_dict, result_str, dis_ious = do_eval(cfg, model, data_loaders_val, iteration)
         return
     
