@@ -59,7 +59,13 @@ def do_eval(cfg, model, data_loaders_val, iteration):
     )
     comm.synchronize()
     return evaluate_metric, result_str, dis_ious
-
+def freeze_bn(m):
+    for i,k in m.named_children():
+        if isinstance(k,torch.nn.BatchNorm2d):
+            k.eval()
+        else:
+            freeze_bn(k)
+            
 def do_train(
         cfg,
         distributed,
