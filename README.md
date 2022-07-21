@@ -59,7 +59,7 @@ python tools/plain_train_net.py --batch_size 8 --config runs/DGDE.yaml \
 ```
 
 b) using DGDE to generate needed data for GMW.
-Finishing training for DGDE, please generate data on 1 gpu card as:
+Finishing training for DGDE, please generate data on 1 GPU as:
 ```bash
 cd DGDE
 CUDA_VISIBLE_DEVICES=0 \
@@ -87,7 +87,7 @@ main.py --log-dir ./logs/GMW/eval \
 --resume ./logs/GMW/checkpoint_epoch_100.pth.tar
 ```
 
-You can alse use the pre-trained data of [DGDE,gen data,WGM]().
+You can alse use the pre-trained weights of [DGDE,WGM]().
 
 **Note:** There is an obvious variation of the performance for different runs as our baseline [MonoFlex](https://github.com/zhangyp15/MonoFlex) says. Different training runs may get different results.
 
