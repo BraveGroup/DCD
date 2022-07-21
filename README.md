@@ -91,4 +91,4 @@ You can alse use the pre-trained data of [DGDE,gen data,WGM]().
 
 ## Acknowlegment
 
-The code is maily based on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [DBPnP](https://github.com/Liumouliu/Deep_blind_PnP). Thanks for their great work.
+The code is mainly based on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [DBPnP](https://github.com/Liumouliu/Deep_blind_PnP). Thanks for their great work.
