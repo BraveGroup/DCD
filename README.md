@@ -90,8 +90,6 @@ main.py --log-dir ./logs/GMW/eval \
 
 You can alse use the pre-trained weights of [DGDE,WGM]().
 
-**Note:** There is an obvious variation of the performance for different runs as our baseline [MonoFlex](https://github.com/zhangyp15/MonoFlex) says. Different training runs may get different results.
-
 ## Acknowlegment
 
 The code is mainly based on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [BPnP](https://github.com/dylan-campbell/bpnpnet). Thanks for their great work.
