@@ -1,0 +1,12 @@
+*.pyc
+output/
+logs/
+*.o
+*.so
+.vscode/
+DGDE/dataset
+gen_data*
+log.txt
+*.sh
+*.json
+

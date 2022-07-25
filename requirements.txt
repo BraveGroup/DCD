@@ -1,0 +1,15 @@
+shapely
+tqdm
+tensorboard
+tensorboardX
+scikit-image
+matplotlib
+yacs
+pyyaml
+fire
+pycocotools
+fvcore
+opencv-python
+numba
+numpy
+scipy
