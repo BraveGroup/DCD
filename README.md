@@ -93,3 +93,15 @@ You can also use the pre-trained weights of [DGDE,WGM (Google Drive)](https://dr
 ## Acknowlegment
 
 The code is mainly based on [MonoFlex](https://github.com/zhangyp15/MonoFlex) and [BPnP](https://github.com/dylan-campbell/bpnpnet). Thanks for their great work.
+
+## Citation
+If this work is helpful for your research, please consider citing it:
+```
+@article{li2022densely,
+  title={Densely Constrained Depth Estimator for Monocular 3D Object Detection},
+  author={Li, Yingyan and Chen, Yuntao and He, Jiawei and Zhang, Zhaoxiang},
+  journal={arXiv e-prints},
+  pages={arXiv--2207},
+  year={2022}
+}
+```
