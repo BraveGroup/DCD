@@ -2,8 +2,6 @@
 Released code for Densely Constrained Depth Estimator for Monocular 3D Object Detection (ECCV22). [arxiv](https://arxiv.org/abs/2207.10047)
 Yingyan Li, Yuntao Chen, Jiawei He, Zhaoxiang Zhang
 
-## Code still needs to be cleaned, please wait a few days.
-
 ## Environment
 
 This repo is tested with Ubuntu 16.04, python==3.8, pytorch==1.7.0 and cuda==10.1.
